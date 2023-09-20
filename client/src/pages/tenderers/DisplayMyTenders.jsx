@@ -36,7 +36,7 @@ const DisplayMyTenders = (props) => {
               {props.tenders.map((tender, index) => (
                 <>
                
-                  {tender.owner.toLowerCase() === props.userAccount.toLowerCase() && (
+                  {tender.owner.toString().toLowerCase() === props.userAccount.toString().toLowerCase() && (
                     <tr
                       key={index}
                       className="border-b border-gray-200  hover:bg-gray-100"

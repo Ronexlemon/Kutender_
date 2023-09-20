@@ -38,7 +38,7 @@ const DisplayBidsTenders = (props) => {
                     key={tender.companyName + index}
                     className="border-b border-gray-200  hover:bg-gray-100"
                   >
-                    {tender.bidowner.toString().toLowerCase() ==
+                    {tender.bidowner.toString().toLowerCase() ===
                       props.userAccount.toString().toLowerCase() && (
                       <>
                         <td className="py-3 px-2 text-left whitespace-nowrap">
