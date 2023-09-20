@@ -21,9 +21,9 @@ function TenderAllocation() {
     // check if network is Hedera
     const { chainId } = await web3Provider.getNetwork();
     
-    if (chainId !== 296) {
-      window.alert("Change network to hedera Testnet");
-      throw new Error("Change network to hedera Testnet ");
+    if (chainId !==  84531) {
+      window.alert("Change network to Base Goerli Testnet");
+      throw new Error("Change network to Base Goerli Testnet ");
     }
     if (needSigner) {
       const signer = web3Provider.getSigner();
@@ -67,7 +67,7 @@ function TenderAllocation() {
   // },[])
   useEffect(() => {
     Web3ModalRef.current = new Web3Modal({
-      network: "hedera",
+      network: "BaseGoerli",
       providerOptions: {},
       disableInjectedProvider: false,
       cacheProvider: false,

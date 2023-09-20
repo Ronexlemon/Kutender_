@@ -19,9 +19,9 @@ function TenderStatus() {
     const web3Provider = new providers.Web3Provider(provider);
     // check if network is hedera
     const { chainId } = await web3Provider.getNetwork();
-    if (chainId !== 296) {
-      window.alert("Change network to hedera Testnet");
-      throw new Error("Change network To hedera Testnet");
+    if (chainId !==  84531) {
+      window.alert("Change network to Base Goerli Testnet");
+      throw new Error("Change network To Base Goerli Testnet");
     }
 
     if (needSigner) {

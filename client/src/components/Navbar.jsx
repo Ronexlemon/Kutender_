@@ -48,15 +48,15 @@ const Navbar = () => {
   const connectWallet = async (needSigner = false) => {
     const provider = await Web3ModalRef.current.connect();
     const web3Provider = new providers.Web3Provider(provider);
-    // check if network is polygon hermez
+    // check if network is base
     const { chainId } = await web3Provider.getNetwork();
      const signer = web3Provider.getSigner();
      const accounts = await signer.getAddress();
     //setUserAccount(accounts);
    
-    if (chainId !== 296) {
-      window.alert("Change network to Hedera Network");
-      throw new Error("Change network Hedera Network ");
+    if (chainId !==  84531) {
+      window.alert("Change network to Base Goerli");
+      throw new Error("Change network Base Goerli ");
      
     }
     setWalletConnect(true)
@@ -68,7 +68,7 @@ const Navbar = () => {
   };
   useEffect(() => {
     Web3ModalRef.current = new Web3Modal({
-      network: "hedera",
+      network: "basegoerli",
       providerOptions: {},
       disableInjectedProvider: false,
       cacheProvider: false,

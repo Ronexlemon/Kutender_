@@ -79,9 +79,9 @@ const MyBidsTenders = () => {
     setUserAccount(accounts);
     //check if user is connected to hedera network
     const { chainId } = await web3Provider.getNetwork();
-    if (Number(chainId) !== 296) {
-      window.alert("Change network to Hedera Testnet");
-      throw new Error("Change network To Hedera Testnet");
+    if (Number(chainId) !==  84531) {
+      window.alert("Change network to base goerli Testnet");
+      throw new Error("Change network To Base goerli Testnet");
     }
     const signer = web3Provider.getSigner();
     // const accounts = await signer.getAddress();
@@ -98,7 +98,7 @@ const MyBidsTenders = () => {
   };
   useEffect(() => {
     web3ModalRef.current = new Web3Modal({
-      network:"hedera",
+      network:"baseGoerli",
       providerOptions: {},
       disableInjectedProvider: false,
       cacheProvider: false,

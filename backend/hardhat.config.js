@@ -6,12 +6,14 @@ const KEY = process.env.PRIVATE_KEY;
 module.exports = {
   solidity: "0.8.17",
   networks:{
-    hedera :{
-      url: `https://testnet.hashio.io/api`,
-      chainId: 296,
+    base_goerli :{
+      url: `https://goerli.base.org`,
+      chainId: 84531,
       accounts: [KEY],
+      gasPrice: 800000000,
       
     },
+   
     
   },
 };

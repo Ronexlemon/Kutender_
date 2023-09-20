@@ -17,12 +17,12 @@ function Approve() {
   const getProviderOrSigner = async (needSigner = false) => {
     const provider = await Web3ModalRef.current.connect();
     const web3Provider = new providers.Web3Provider(provider);
-    // check if network is Hedera 
+    // check if network is base
     const { chainId } = await web3Provider.getNetwork();
    
-    if (chainId !== 296) {
-      window.alert("Change network to Hedera Testnet");
-      throw new Error("Change network to Hedera Testnet ");
+    if (chainId !==  84531) {
+      window.alert("Change network to base Goerli Testnet");
+      throw new Error("Change network to base Goerli Testnet ");
     }
     if (needSigner) {
       const signer = web3Provider.getSigner();
@@ -66,7 +66,7 @@ function Approve() {
   // },[])
   useEffect(() => {
     Web3ModalRef.current = new Web3Modal({
-      network: "PolygonzkEVM",
+      network: "Basegoerli",
       providerOptions: {},
       disableInjectedProvider: false,
       cacheProvider: false,
