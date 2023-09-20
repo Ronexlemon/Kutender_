@@ -32,7 +32,7 @@ const DisplayBidsTenders = (props) => {
               </tr>
             </thead>
             <tbody className="text-[#130026]  text-sm font-light">
-              {props.tenders.map((tender, index) => (
+              {props.tenders?.map((tender, index) => (
                 <>
                   <tr
                     key={tender.companyName + index}
