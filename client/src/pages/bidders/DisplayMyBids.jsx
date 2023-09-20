@@ -4,10 +4,9 @@ const DisplayBidsTenders = (props) => {
    const [nothavetender, setNotHaveTender] = useState(false);
 
    useEffect(() => {
-    const filteredTenders = props.tenders.filter(
-      (tender) => tender.owner.toString().toLowerCase() === props.userAccount.toString().toLowerCase()
-      
-    );
+     const filteredTenders = props.tenders.filter(
+       (tender) => tender.bidowner.toString().toLowerCase() == props.userAccount.toString().toLowerCase()
+     );
      setNotHaveTender(filteredTenders.length === 0);
      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
    }, [props.tenders, props.userAccount]);
@@ -39,7 +38,8 @@ const DisplayBidsTenders = (props) => {
                     key={tender.companyName + index}
                     className="border-b border-gray-200  hover:bg-gray-100"
                   >
-                    {tender.owner.toString().toLowerCase() === props.userAccount.toString().toLowerCase() && (
+                    {tender.bidowner.toString().toLowerCase() ==
+                      props.userAccount.toString().toLowerCase() && (
                       <>
                         <td className="py-3 px-2 text-left whitespace-nowrap">
                           <div className="flex items-center">
